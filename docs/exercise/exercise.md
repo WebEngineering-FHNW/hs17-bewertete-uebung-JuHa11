@@ -2,9 +2,9 @@
 
 ## Commit Proposal
 
-Matriculation Number: <to be filled by student>
+Matriculation Number: 15-924-327
 
-Project idea short description: 
+Project idea short description: socrative-light, like in socrative-light.md described.
 
 
 ## Project confirmation
@@ -18,7 +18,7 @@ How to start the project: (if other than `grailsw run-app`)
 
 How to test the project:  (if other than `grailsw test-app`)
 
-Project description:      (if other than `/index.html`)
+Project description: (5punkte! Handgeschriebenes HTML)     (if other than `/index.html`)
 
 External contributions:
 
