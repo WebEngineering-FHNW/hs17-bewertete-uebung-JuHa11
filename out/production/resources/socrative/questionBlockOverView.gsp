@@ -2,7 +2,28 @@
     <head>
         <meta name="Overview" content="main">
         <title>Overview</title>
-        <link rel="stylesheet" type="text/css" href="${resource(file: "own.css")}" />
+        <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: powderblue;
+        }
+
+        button {
+            border: 2px solid lightgrey;
+            border-radius: 5px;
+        }
+        </style>
     </head>
 
     <body>

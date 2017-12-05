@@ -9,6 +9,10 @@ class SocrativeController {
         render view:"questionBlockOverView", model:[qblocks:qblocks]
     }
 
+    def test(){
+        render view:"addQuestionBlockView"
+    }
+
     def getQuestion(Questionblock qb){
         question = Question.findByQuestionblock(qb)
         render view:"questionBlockOverView", model:[questions: question]
