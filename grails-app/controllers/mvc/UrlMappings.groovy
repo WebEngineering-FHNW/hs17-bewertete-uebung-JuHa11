@@ -9,7 +9,7 @@ class UrlMappings {
                 // apply constraints here
             }
         }
-        "/"(view:"/index")
+        "/"(controller: "Socrative", action: "index")
         "500"(view:'/error')
         "404"(view:'/notFound')
     }
