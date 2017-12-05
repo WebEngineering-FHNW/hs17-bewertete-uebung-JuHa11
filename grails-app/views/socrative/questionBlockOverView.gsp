@@ -27,7 +27,7 @@
             </table>
         </div>
         <div>
-            <a href="/"><button>add</button></a>
+            <a href="${createLink(uri:'/socrative/addQuestionBlock')}"><button>add</button></a>
         </div>
     </body>
 </html>
