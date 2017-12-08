@@ -7,10 +7,19 @@ body {
 table {
     border-collapse: collapse;
     width: 100%;
+    margin-top: 17px;
 }
 
 nav {
-    padding-bottom: 1%;
+    padding-bottom: 30px;
+}
+
+bigtitle {
+    border-left: 3px solid green;
+    margin-left: 20px;
+    padding-left: 5px;
+    font-size: 24px;
+    font-weight: bold;
 }
 
 td, th {
@@ -69,7 +78,7 @@ input {
 .headertext{
     height: 30px;
     margin-bottom: 2%;
-    margin-top:0%;
+    margin-top:2%;
 }
 
 .answerfield {

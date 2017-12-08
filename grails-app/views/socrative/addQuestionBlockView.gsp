@@ -5,18 +5,19 @@
         <link rel="stylesheet" type="text/css" href="${resource(file: "own.css")}" />
     </head>
     <body>
-        <ul>
-            <li><a href="/socrative/index">Overview</a></li>
-            <li><a href="#news">News</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li style="float:right"><a class="active" href="#about">About</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="/socrative/index">Overview</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
 
         <g:form controller="socrative" action="save">
             <div>
-                <h3>Title of the questionblock: </h3>
+                <bigtitle>Title of the questionblock: </bigtitle>
                 <input type="text" class="headertext" name="name"><br>
-                <h3>Question: </h3>
+                <bigtitle>Question: </bigtitle>
                 <input type="text" class="headertext" name="question">
             </div>
             <div>

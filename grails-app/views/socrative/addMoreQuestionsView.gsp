@@ -5,16 +5,18 @@
         <link rel="stylesheet" type="text/css" href="${resource(file: "own.css")}" />
     </head>
     <body>
-    <ul>
-        <li><a href="/socrative/index">Overview</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-    </ul>
+    <nav>
+        <ul>
+            <li><a href="/socrative/index">Overview</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <g:form controller="socrative" action="saveMoreQuestions">
         <div>
-            Add a question to: ${title}<br>
-            <h3>Question: </h3>
+            <bigtitle>Add a question to:</bigtitle> ${title}<br>
+            <bigtitle>Question: </bigtitle>
             <input type="text" class="headertext" name="question">
         </div>
         <div>
