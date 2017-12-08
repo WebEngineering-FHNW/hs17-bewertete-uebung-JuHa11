@@ -1,5 +1,10 @@
+body {
+    @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 18px;
+}
+
 table {
-    font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
 }
@@ -9,18 +14,24 @@ nav {
 }
 
 td, th {
-    border: 1px solid #dddddd;
+    border: 3px solid grey;
     text-align: left;
     padding: 8px;
 }
 
 tr:nth-child(even) {
-    background-color: powderblue;
+    background-color: lightskyblue;
 }
 
 button {
-    border: 2px solid lightgrey;
-    border-radius: 5px;
+    border: 2px solid darkblue;
+    color: whitesmoke;
+    background-color: darkblue;
+    margin: 5px;
+    border-radius: 4px;
+    height: 50px;
+    width: 200px;
+    box-shadow: 5px 5px 3px grey;
 }
 
 ul {
@@ -47,6 +58,20 @@ li a:hover:not(.active) {
     background-color: #111;
 }
 
-.active {
-    background-color: #4CAF50;
+input {
+    width: 95%;
+    border: 1px solid #ccc !important;
+    border-radius: 8px;
+    margin: 1%;
+    margin-right: 10px;
+}
+
+.headertext{
+    height: 30px;
+    margin-bottom: 2%;
+    margin-top:0%;
+}
+
+.answerfield {
+    height: 50px;
 }

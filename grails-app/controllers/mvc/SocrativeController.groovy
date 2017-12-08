@@ -5,8 +5,6 @@ import org.jboss.logging.Param
 class SocrativeController {
 
     def index() {
-        Questionblock qb = new Questionblock(name: "Block 1", numberOfQuestions: 2)
-        qb.save()
         List<Questionblock> qblocks = Questionblock.all
         render view:"questionBlockOverView", model:[qblocks:qblocks]
     }
@@ -32,11 +30,12 @@ class SocrativeController {
         Answer a4 = new Answer(answer: params.get("answer")[3], correct: params.get("answer4correct"))
         a4.save()
 
-        Question q = new Question(questionblock: qb, question: params.get("name"), answer1: a1, answer2: a2, answer3: a3, answer4: a4)
+        Question q = new Question(questionblock: qb, question: params.get("question"), answer1: a1, answer2: a2, answer3: a3, answer4: a4)
         q.save()
 
         if(params.containsKey('save')){
-            index()
+            //index()
+            redirect(uri: "/socrative/index")
         } else if(params.containsKey('addmore')) {
             render view:"addMoreQuestionsView", model:[title:params.get("name"), id:qb.id]
         }
@@ -57,11 +56,11 @@ class SocrativeController {
         Answer a4 = new Answer(answer: params.get("answer")[3], correct: params.get("answer4correct"))
         a4.save(flush: true)
 
-        Question q = new Question(questionblock: qb, question: params.get("name"), answer1: a1, answer2: a2, answer3: a3, answer4: a4)
+        Question q = new Question(questionblock: qb, question: params.get("question"), answer1: a1, answer2: a2, answer3: a3, answer4: a4)
         q.save(flush: true)
 
         if(params.containsKey('save')){
-            index()
+            redirect(uri: "/socrative/index")
         } else if(params.containsKey('addmore')) {
             render view:"addMoreQuestionsView", model:[title:qb.name, id:qb.id]
         }
