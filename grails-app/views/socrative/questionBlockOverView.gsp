@@ -6,6 +6,15 @@
     </head>
 
     <body>
+        <nav>
+            <ul>
+                <li><a href="/socrative/index">Overview</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li style="float:right"><a class="active" href="#about">About</a></li>
+            </ul>
+        </nav>
+
         <div>
             <table style="width:100%">
                 <thead>
@@ -13,6 +22,7 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>#Questions</th>
+                        <th>Start</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,6 +31,7 @@
                             <td>${it.id}</td>
                             <td>${it.name}</td>
                             <td>${it.numberOfQuestions}</td>
+                            <td>start</td>
                         </tr>
                     </g:each>
                 </tbody>

@@ -5,6 +5,13 @@
         <link rel="stylesheet" type="text/css" href="${resource(file: "own.css")}" />
     </head>
     <body>
+        <ul>
+            <li><a href="/socrative/index">Overview</a></li>
+            <li><a href="#news">News</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li style="float:right"><a class="active" href="#about">About</a></li>
+        </ul>
+
         <g:form controller="socrative" action="save">
             <div>
                 Title: <input type="text" name="name">
@@ -42,7 +49,9 @@
                     </tbody>
                 </table>
             </div>
-            <button type="submit">save</button>
+
+            <button type="submit" name="save">save</button>
+            <button type="submit" name="addmore">add more questions</button>
         </g:form>
     </body>
 </html>
