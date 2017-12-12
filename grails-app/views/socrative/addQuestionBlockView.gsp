@@ -16,39 +16,34 @@
         <g:form controller="socrative" action="save">
             <div>
                 <bigtitle>Title of the questionblock: </bigtitle>
-                <input type="text" class="headertext" name="name"><br>
+                <input type="text" class="headertext" name="name" required><br>
                 <bigtitle>Question: </bigtitle>
-                <input type="text" class="headertext" name="question">
+                <input type="text" class="headertext" name="question" required>
             </div>
             <div>
                 <table>
                     <thead>
                     <tr>
-                        <th></th>
                         <th>Correct</th>
-                        <th>Question</th>
+                        <th>Answer</th>
                     </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Answer 1</td>
                             <td><input type="checkbox" name="answer1correct"></td>
-                            <td><input type="text" class="answerfield" name="answer"></td>
+                            <td><input type="text" class="answerfield" name="answer" required></td>
                         </tr>
                         <tr>
-                            <td>Answer 2</td>
                             <td><input type="checkbox" name="answer2correct"></td>
-                            <td><input type="text" class="answerfield" name="answer"></td>
+                            <td><input type="text" class="answerfield" name="answer" required></td>
                         </tr>
                         <tr>
-                            <td>Answer 3</td>
                             <td><input type="checkbox" name="answer3correct"></td>
-                            <td><input type="text" class="answerfield" name="answer"></td>
+                            <td><input type="text" class="answerfield" name="answer" required></td>
                         </tr>
                         <tr>
-                            <td>Answer 4</td>
                             <td><input type="checkbox" name="answer4correct"></td>
-                            <td><input type="text" class="answerfield" name="answer"></td>
+                            <td><input type="text" class="answerfield" name="answer" required></td>
                         </tr>
                     </tbody>
                 </table>
