@@ -1,10 +1,15 @@
-<g:each var="question" in="${questions}">
+
+<g:if test="${question != null}">
     <p>
-        ${question.question}
-        ${question.answer1}
-        ${question.answer2}
-        ${question.answer3}
-        ${question.answer4}
+        ${question.question}<br>
+        ${question.answer1.answer}<br>
+        ${question.answer2.answer}<br>
+        ${question.answer3.answer}<br>
+        ${question.answer4.answer}<br>
     </p>
-</g:each>
-test
+    <g:link controller="socrative" action="nextQuestion" params="[ index: index, questionblockID: questionblockID]" > weiter </g:link>
+</g:if>
+<g:else>
+    Fertig!
+</g:else>
+

@@ -31,7 +31,7 @@
                             <td>${it.id}</td>
                             <td>${it.name}</td>
                             <td>${it.numberOfQuestions}</td>
-                            <td><g:link controller="socrative" action="getQuestions" params="[questionblockID:it.id]" > start </g:link></td>
+                            <td><g:link controller="socrative" action="startQuestionset" params="[questionblockID:it.id]" > start </g:link></td>
                         </tr>
                     </g:each>
                 </tbody>

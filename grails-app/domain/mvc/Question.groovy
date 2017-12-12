@@ -2,12 +2,11 @@ package mvc
 
 class Question {
 
-    Questionblock questionblock;
-    String question;
-    Answer answer1;
-    Answer answer2;
-    Answer answer3;
-    Answer answer4;
+    String question
+    Answer answer1
+    Answer answer2
+    Answer answer3
+    Answer answer4
 
     static constraints = {
     }
