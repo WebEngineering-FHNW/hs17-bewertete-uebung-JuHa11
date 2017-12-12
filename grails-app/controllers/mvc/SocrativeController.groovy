@@ -74,9 +74,16 @@ class SocrativeController {
     }
 
     def nextQuestion() {
+        //List<Integer> correct = new ArrayList<>()
+
+
         int index = Integer.parseInt(params.get('index')) + 1
         Questionblock qb = Questionblock.get(Integer.parseInt(params.get("questionblockID").toString()))
         render view:"quizView", model:[question: qb.questions[index], index: index, questionblockID: params.get("questionblockID")]
+    }
+
+    def isCorrect(Question q, int... correct) {
+
     }
 
 
