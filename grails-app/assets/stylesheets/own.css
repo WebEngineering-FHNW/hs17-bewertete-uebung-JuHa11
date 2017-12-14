@@ -71,12 +71,26 @@ li a:hover:not(.active) {
     background-color: #111;
 }
 
-input {
+.input {
     width: 95%;
     border: 1px solid #ccc !important;
     border-radius: 8px;
     margin: 1%;
     margin-right: 10px;
+}
+
+box {
+    float: left;
+    margin-right: 2%;
+    margin-left: 10%;
+    margin-top: 1%;
+    width: 47%;
+    overflow: auto;
+    background: #fff;
+    background-color: rgb(255, 255, 255);
+    padding: 0.8%;
+    margin-bottom: 2%;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
 }
 
 .headertext{

@@ -17,7 +17,7 @@
         <div>
             <bigtitle>Add a question to:</bigtitle> ${title}<br>
             <bigtitle>Question: </bigtitle>
-            <input type="text" class="headertext" name="question" required>
+            <input class="input" type="text" class="headertext" name="question" required>
         </div>
         <div>
             <table>
@@ -31,20 +31,20 @@
                 <div class="col-md-8">
                     <tbody>
                         <tr>
-                            <td><input type="checkbox" name="answer1correct"></td>
-                            <td><input type="text" class="answerfield" name="answer" required></td>
+                            <td><input class="input" type="checkbox" name="answer1correct"></td>
+                            <td><input class="input" type="text" class="answerfield" name="answer" required></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="answer2correct"></td>
-                            <td><input type="text" class="answerfield" name="answer" required></td>
+                            <td><input class="input" type="checkbox" name="answer2correct"></td>
+                            <td><input class="input" type="text" class="answerfield" name="answer" required></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="answer3correct"></td>
-                            <td><input type="text" class="answerfield" name="answer" required></td>
+                            <td><input class="input" type="checkbox" name="answer3correct"></td>
+                            <td><input class="input" type="text" class="answerfield" name="answer" required></td>
                         </tr>
                         <tr>
-                            <td><input type="checkbox" name="answer4correct"></td>
-                            <td><input type="text" class="answerfield" name="answer" required></td>
+                            <td><input class="input" type="checkbox" name="answer4correct"></td>
+                            <td><input class="input" type="text" class="answerfield" name="answer" required></td>
                         </tr>
                     </tbody>
                 </div>
