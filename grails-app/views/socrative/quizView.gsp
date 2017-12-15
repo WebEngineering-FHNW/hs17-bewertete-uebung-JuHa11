@@ -4,6 +4,8 @@
         <title>Overview</title>
         <link rel="stylesheet" type="text/css" href="${resource(file: "bootstrap.css")}" />
         <link rel="stylesheet" type="text/css" href="${resource(file: "own.css")}" />
+
+
     </head>
 
     <body>
@@ -15,7 +17,28 @@
             </ul>
         </nav>
         <g:if test="${lastquestion != null}">
-            ${lastquestion}
+
+            <!-- Trigger/Open The Modal -->
+            <button id="openModalButton" hidden></button>
+
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">weiter</span>
+                    <p>
+                        <g:if test="${lastquestion}">
+                            Your answer was correct!
+                        </g:if>
+                        <g:else>
+                            Your answer was wrong :-(
+                        </g:else>
+                        ${lastquestion}</p>
+                </div>
+
+            </div>
+
         </g:if>
         <g:if test="${question != null}">
             <p>
@@ -47,5 +70,38 @@
             Fertig!
         </g:else>
     </body>
+    <script>
+        // Get the modal
+        var modal = document.getElementById('myModal');
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModalButton");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        window.onload = function() {
+          var button = document.getElementById('openModalButton')  ;
+          button.hidden = true;
+          button.click();
+        };
+    </script>
 </html>
 

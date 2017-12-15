@@ -93,11 +93,8 @@ class SocrativeController {
         int questionBlockId = intParam(params, "questionblockID")
         Questionblock qb = Questionblock.get(questionBlockId)
         int index = intParam(params, 'index')
-        println "index is : $index"      // todo dk: check
+
         Question q = qb.questions[index] // todo dk: what happens if qb is null? see (1)
-        println "question is : $q"       // todo dk: check
-        List<Question> a = Question.all  // todo dk: is 'a' ever used ?
-        List<Answer> b = Answer.all      // todo dk: is 'b' ever used ?
         boolean correct = isCorrect(q,
             (params.get("answer1correct")?true:false), // todo dk: these are boolean arguments
             (params.get("answer2correct")?true:false), //no shit sherlock?
@@ -124,16 +121,9 @@ class SocrativeController {
     }
 
     def isCorrect(Question q, boolean answer1, boolean answer2, boolean answer3, boolean answer4) {
-        // todo dk: which type is q.answer1?
-        println "q.answer1 == answer1 : ${q.answer1 == answer1}"
-        println "q.answer1 != answer1 : ${q.answer1 != answer1}"
-        println "suprise!"
         if(q.answer1.correct != answer1 || q.answer2.correct != answer2 || q.answer3.correct != answer3 || q.answer4.correct != answer4) {
             return false
         }
         return true
-        // todo dk: can you code the above by using == instead of != ?
-        //          then you see the error immediately.
-        //          (it also make the code much nicer ...)
     }
 }
