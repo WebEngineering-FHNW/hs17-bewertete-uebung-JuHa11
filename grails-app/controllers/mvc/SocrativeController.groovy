@@ -93,7 +93,7 @@ class SocrativeController {
         List<Question> a = Question.all  // todo dk: is 'a' ever used ?
         List<Answer> b = Answer.all      // todo dk: is 'b' ever used ?
         boolean correct = isCorrect(q,
-            (params.get("answer1correct")?true:false),
+            (params.get("answer1correct")?true:false), // todo dk: these are boolean arguments
             (params.get("answer2correct")?true:false),
             (params.get("answer3correct")?true:false),
             (params.get("answer4correct")?true:false))
@@ -118,9 +118,16 @@ class SocrativeController {
     }
 
     def isCorrect(Question q, boolean answer1, boolean answer2, boolean answer3, boolean answer4) {
+        // todo dk: which type is q.answer1?
+        println "q.answer1 == answer1 : ${q.answer1 == answer1}"
+        println "q.answer1 != answer1 : ${q.answer1 != answer1}"
+        println "suprise!"
         if(q.answer1 != answer1 || q.answer2 != answer2 || q.answer3 != answer3 || q.answer4 != answer4) {
             return false
         }
         return true
+        // todo dk: can you code the above by using == instead of != ?
+        //          then you see the error immediately.
+        //          (it also make the code much nicer ...)
     }
 }
