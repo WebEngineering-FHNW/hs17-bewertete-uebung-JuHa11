@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     @import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
     font-family: 'Nunito Sans', sans-serif;
@@ -26,8 +30,16 @@ bigtitle {
     font-weight: bold;
 }
 
+smalltitle{
+    border-left: 2px solid green;
+    margin-left: 5px;
+    padding-left: 5px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 td, th {
-    border: 3px solid grey;
+    border: 3px ridge grey;
     text-align: left;
     padding: 8px;
 }
@@ -88,6 +100,23 @@ box {
     overflow: auto;
     background: #fff;
     background-color: rgb(255, 255, 255);
+    padding: 0.8%;
+    margin-bottom: 2%;
+    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
+}
+
+section {
+    display:block;
+}
+
+boxstartseite {
+    float: left;
+    margin-left: 2%;
+    margin-top: 1%;
+    width: 29%;
+    overflow: auto;
+    background: #fff;
+    background-color: rgb(255, 255, 240);
     padding: 0.8%;
     margin-bottom: 2%;
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);

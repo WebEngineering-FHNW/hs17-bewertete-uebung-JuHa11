@@ -6,6 +6,7 @@ class SocrativeController {
 
     def index() {
         List<Questionblock> qblocks = Questionblock.all
+        List<Answer> answers = Answer.all
         render view:"questionBlockOverView", model:[qblocks:qblocks]
     }
 
@@ -30,9 +31,14 @@ class SocrativeController {
         Question q = new Question(question: params.get("question"), answer1: a1, answer2: a2, answer3: a3, answer4: a4)
         q.save(flush: true, failOnError: true)
 
+
+
         qb.questions.add(q)
 
         qb.save(flush:true,failOnError:true)
+
+        List<Answer> answers = Answer.all
+
 
         if(qb.hasErrors()){
             println("ERROR: ")
