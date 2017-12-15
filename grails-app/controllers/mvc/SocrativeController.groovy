@@ -84,20 +84,37 @@ class SocrativeController {
 
     def nextQuestion() {
         //Check answer
-        Questionblock qb = Questionblock.get(Integer.parseInt(params.get("questionblockID").toString()))
-        Question q = qb.questions[Integer.parseInt(params.get("index"))]
-        List<Question> a = Question.all
-        List<Answer> b = Answer.all
-        boolean correct = isCorrect(q, (params.get("answer1correct")?true:false), (params.get("answer2correct")?true:false), (params.get("answer3correct")?true:false), (params.get("answer4correct")?true:false))
+        int questionBlockId = intParam(params, "questionblockID")
+        Questionblock qb = Questionblock.get(questionBlockId)
+        int index = intParam(params, 'index')
+        println "index is : $index"      // todo dk: check
+        Question q = qb.questions[index] // todo dk: what happens if qb is null? see (1)
+        println "question is : $q"       // todo dk: check
+        List<Question> a = Question.all  // todo dk: is 'a' ever used ?
+        List<Answer> b = Answer.all      // todo dk: is 'b' ever used ?
+        boolean correct = isCorrect(q,
+            (params.get("answer1correct")?true:false),
+            (params.get("answer2correct")?true:false),
+            (params.get("answer3correct")?true:false),
+            (params.get("answer4correct")?true:false))
 
         //get new Question
-        int index = Integer.parseInt(params.get('index')) + 1
-        if(qb != null){
-            render view:"quizView", model:[question: qb.questions[index], index: index, questionblockID: params.get("questionblockID"), lastquestion: correct]
+        index = index + 1
+        if(qb != null){                         // todo dk: (1) apparently, qb might be null
+            render view:"quizView", model:[
+                question: qb.questions[index],  // todo dk: is index inside the available range?
+                index: index,
+                questionblockID: questionBlockId,
+                lastquestion: correct
+            ]
         } else {
             //TODO: getResult;
             //TODO: render view:"quizView", model:[question: null, points: , numberOfQuestions: ]
         }
+    }
+
+    static Integer intParam(params, String parameterName) {
+        params.get(parameterName)?.toInteger() ?: 0
     }
 
     def isCorrect(Question q, boolean answer1, boolean answer2, boolean answer3, boolean answer4) {
