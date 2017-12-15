@@ -2,6 +2,7 @@
     <head>
         <meta name="Overview" content="main">
         <title>Overview</title>
+        <link rel="stylesheet" type="text/css" href="${resource(file: "bootstrap.css")}" />
         <link rel="stylesheet" type="text/css" href="${resource(file: "own.css")}" />
     </head>
 

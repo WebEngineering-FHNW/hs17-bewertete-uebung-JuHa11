@@ -100,7 +100,7 @@ class SocrativeController {
         List<Answer> b = Answer.all      // todo dk: is 'b' ever used ?
         boolean correct = isCorrect(q,
             (params.get("answer1correct")?true:false), // todo dk: these are boolean arguments
-            (params.get("answer2correct")?true:false),
+            (params.get("answer2correct")?true:false), //no shit sherlock?
             (params.get("answer3correct")?true:false),
             (params.get("answer4correct")?true:false))
 
@@ -128,7 +128,7 @@ class SocrativeController {
         println "q.answer1 == answer1 : ${q.answer1 == answer1}"
         println "q.answer1 != answer1 : ${q.answer1 != answer1}"
         println "suprise!"
-        if(q.answer1 != answer1 || q.answer2 != answer2 || q.answer3 != answer3 || q.answer4 != answer4) {
+        if(q.answer1.correct != answer1 || q.answer2.correct != answer2 || q.answer3.correct != answer3 || q.answer4.correct != answer4) {
             return false
         }
         return true
