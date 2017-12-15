@@ -28,17 +28,14 @@
                 <div class="modal-content">
                     <span class="close">weiter</span>
                     <p>
-                        <g:if test="${lastquestion}">
-                            Your answer was correct!
-                        </g:if>
-                        <g:else>
-                            Your answer was wrong :-(
-                        </g:else>
-                        ${lastquestion}</p>
+                    <g:if test="${lastquestion}">
+                        Your answer is correct!
+                    </g:if>
+                    <g:else>
+                        Your answer is wrong :-(
+                    </g:else>
                 </div>
-
             </div>
-
         </g:if>
         <g:if test="${question != null}">
             <p>

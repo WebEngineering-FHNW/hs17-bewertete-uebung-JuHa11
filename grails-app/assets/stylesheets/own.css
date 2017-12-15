@@ -116,7 +116,7 @@ boxstartseite {
     width: 29%;
     overflow: auto;
     background: #fff;
-    background-color: rgb(255, 255, 240);
+    background-color: rgba(0, 0, 0, 0.05);
     padding: 0.8%;
     margin-bottom: 2%;
     box-shadow: 0 6px 10px 0 rgba(0,0,0,0.2);
