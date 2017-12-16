@@ -22,8 +22,8 @@ class SocrativeController {
      * Creates a new Questionblock and saves
      */
     def save () {
-        Questionblock qb = new Questionblock(name: params.get("name"), numberOfQuestions: 1 )
-        save(params, qb)
+        Questionblock qb = new Questionblock(name: params.get("name"), numberOfQuestions: 1, highscore: 0)
+        savequestion(params, qb)
     }
 
     /*
@@ -32,13 +32,13 @@ class SocrativeController {
     def saveMoreQuestions(){
         Questionblock qb = Questionblock.get(Integer.parseInt(params.get("id")))
         qb.numberOfQuestions++
-        save(params, qb)
+        savequestion(params, qb)
     }
 
     /*
      * Saves the question with all answers
      */
-    def save(params, Questionblock qb){
+    def savequestion(params, Questionblock qb){
         Object o = params.get('answer')
         Answer a1 = new Answer(answer: params.get("answer")[0], correct: (params.get("answer1correct")?true:false))
         Answer a2 = new Answer(answer: params.get("answer")[1], correct: (params.get("answer2correct")?true:false))
@@ -47,8 +47,9 @@ class SocrativeController {
 
         Question q = new Question(question: params.get("question"), answer1: a1, answer2: a2, answer3: a3, answer4: a4)
         q.save(flush: true, failOnError: true)
-        qb.questions.add(q)
 
+        qb.questions.add(q)
+        qb.correct.add(false)
         qb.save(flush:true,failOnError:true)
 
         if(qb.hasErrors()){
@@ -92,7 +93,7 @@ class SocrativeController {
             return
         }
 
-        boolean correct = isCorrect(q,
+        boolean correct = isCorrect(qb, index, q,
             (params.get("answer1correct")?true:false),
             (params.get("answer2correct")?true:false),
             (params.get("answer3correct")?true:false),
@@ -102,21 +103,21 @@ class SocrativeController {
         index = index + 1
         if(qb.questions[index] != null){
             render view:"quizView", model:[
-                    question: qb.questions[index],  // todo dk: is index inside the available range?
-                    index: index,
-                    questionblockID: questionBlockId,
-                    lastquestion: correct
+                    question        : qb.questions[index],  // todo dk: is index inside the available range?
+                    index           : index,
+                    questionblockID : questionBlockId,
+                    previousquestion: correct
             ]
         } else {
             //no question left.
             //TODO: getResult;
             //TODO: render view:"quizView", model:[question: null, points: , numberOfQuestions: ]
             render view:"quizView", model:[
-                    question: null,
-                    index: 0,
-                    questionblockID: questionBlockId,
-                    lastquestion: correct,
-                    numberOfQuestions: 0
+                    question         : null,
+                    index            : 0,
+                    questionblockID  : questionBlockId,
+                    previousquestion : correct,
+                    numberOfQuestions: qb.getResult()
             ]
         }
     }
@@ -128,11 +129,14 @@ class SocrativeController {
     /*
      * Check if the question was answered correct
      */
-    def isCorrect(Question q, boolean answer1, boolean answer2, boolean answer3, boolean answer4) {
+    def isCorrect(Questionblock qb, int index, Question q, boolean answer1, boolean answer2, boolean answer3, boolean answer4) {
         if(q.answer1.correct != answer1 || q.answer2.correct != answer2 || q.answer3.correct != answer3 || q.answer4.correct != answer4) {
+            qb.correct[index] = false
+            qb.save(flush:true)
             return false
         }
-        //TODO: increase number of correct questions
+        qb.correct[index] = true
+        qb.save(flush:true)
         return true
     }
 }

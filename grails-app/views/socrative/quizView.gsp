@@ -16,7 +16,7 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <g:if test="${lastquestion != null}">
+        <g:if test="${previousquestion != null}">
 
             <!-- Trigger/Open The Modal -->
             <button id="openModalButton" hidden></button>
@@ -28,7 +28,7 @@
                 <div class="modal-content">
                     <span class="close">weiter</span>
                     <p>
-                    <g:if test="${lastquestion}">
+                    <g:if test="${previousquestion}">
                         Your answer is correct!
                     </g:if>
                     <g:else>
@@ -64,7 +64,8 @@
             </p>
         </g:if>
         <g:else>
-            Fertig!
+            Bravo! You had ${numberOfQuestions} correct.<br>
+            <g:link controller="socrative" action="index" > <button>Overview</button> </g:link>
         </g:else>
     </body>
     <script>
