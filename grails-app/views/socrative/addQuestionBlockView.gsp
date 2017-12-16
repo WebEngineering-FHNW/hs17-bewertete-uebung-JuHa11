@@ -47,7 +47,8 @@
                             <td><input class="input" type="text" class="answerfield" name="answer" required></td>
                         </tr>
                     </tbody>
-                </table>
+                </table><br>
+                <bigtitle>Explanation:</bigtitle><input class="input" type="text" name="explanation">
             </div>
             <br>
             <button type="submit" name="save">save</button>

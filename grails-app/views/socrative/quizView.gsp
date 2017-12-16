@@ -32,7 +32,8 @@
                         Your answer is correct!
                     </g:if>
                     <g:else>
-                        Your answer is wrong :-(
+                        Your answer is wrong :-(<br>
+                        Explanation: ${explanation}
                     </g:else>
                 </div>
             </div>
@@ -65,7 +66,8 @@
         </g:if>
         <g:else>
             Bravo! You had ${numberOfQuestions} correct.<br>
-            <g:link controller="socrative" action="index" > <button>Overview</button> </g:link>
+            <g:link controller="socrative" action="index"> <button>Overview</button> </g:link>
+            <g:link controller="socrative" action="getDetails" params="[questionblockID: questionblockID]"> <button>Detail</button> </g:link>
         </g:else>
     </body>
     <script>

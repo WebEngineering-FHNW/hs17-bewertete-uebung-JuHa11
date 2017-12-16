@@ -18,7 +18,6 @@ class Questionblock {
                 i++
             }
         }
-        if(highscore > i) highscore = i
         return i
     }
 }

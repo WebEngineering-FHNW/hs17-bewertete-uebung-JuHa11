@@ -49,7 +49,8 @@
                         </tr>
                     </tbody>
                 </div>
-            </table>
+            </table><br>
+            <bigtitle>Explanation:</bigtitle><input class="input" type="text" name="explanation">
         </div>
         <input name="id" value="${id}" type="hidden"> <br>
 
