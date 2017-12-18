@@ -24,11 +24,10 @@ class SocrativeController {
         boolean id = params.get("id")==null
         Questionblock qb
         if(id){
-            qb = new Questionblock(name: params.get("name"), numberOfQuestions: 0, highscore: 0)
+            qb = new Questionblock(name: params.get("name"), highscore: 0)
         } else {
             qb = Questionblock.get(Integer.parseInt(params.get("id")))
         }
-        qb.numberOfQuestions++
         savequestion(params, qb)
     }
 

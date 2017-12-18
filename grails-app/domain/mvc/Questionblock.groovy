@@ -3,7 +3,6 @@ package mvc
 class Questionblock {
 
     String name
-    int numberOfQuestions
     List<Question> questions = new ArrayList<>()
     int highscore
     List<Boolean> correct = new ArrayList<>()
@@ -19,5 +18,9 @@ class Questionblock {
             }
         }
         return i
+    }
+
+    int getNumberOfQuestions() {
+        return questions.size()
     }
 }
