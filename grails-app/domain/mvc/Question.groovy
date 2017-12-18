@@ -10,7 +10,7 @@ class Question {
     String explanation
 
     static constraints = {
-
+        explanation nullable: true
     }
 
     static mapping = {

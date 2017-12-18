@@ -21,15 +21,13 @@ class SocrativeController {
      * Creates a new Questionblock and saves
      */
     def save () {
-        Questionblock qb = new Questionblock(name: params.get("name"), numberOfQuestions: 1, highscore: 0)
-        savequestion(params, qb)
-    }
-
-    /*
-     * Get Questionblock and saves answers
-     */
-    def saveMoreQuestions(){
-        Questionblock qb = Questionblock.get(Integer.parseInt(params.get("id")))
+        boolean id = params.get("id")==null
+        Questionblock qb
+        if(id){
+            qb = new Questionblock(name: params.get("name"), numberOfQuestions: 0, highscore: 0)
+        } else {
+            qb = Questionblock.get(Integer.parseInt(params.get("id")))
+        }
         qb.numberOfQuestions++
         savequestion(params, qb)
     }
@@ -58,7 +56,7 @@ class SocrativeController {
         if(params.containsKey('save')){
             redirect(uri: "/socrative/index")
         } else if(params.containsKey('addmore')) {
-            render view:"addMoreQuestionsView", model:[title:qb.name, id:qb.id]
+            render view:"addQuestionBlockView", model:[title:qb.name, id:qb.id]
         }
     }
 
