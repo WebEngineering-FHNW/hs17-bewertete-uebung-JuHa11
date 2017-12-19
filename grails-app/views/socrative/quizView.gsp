@@ -12,8 +12,6 @@
         <nav>
             <ul>
                 <li><a href="/socrative/index">Overview</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <g:if test="${previousquestion != null}">

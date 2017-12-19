@@ -11,6 +11,7 @@ class UrlMappings {
         }
         "/"(controller: "Socrative", action: "index")
         "/socrative/addQuestionBlock"(controller: "Socrative", action: "addQuestionBlock")
+        "/description"(view:'/description')
         "500"(view:'/error')
         "404"(view:'/notFound')
     }
