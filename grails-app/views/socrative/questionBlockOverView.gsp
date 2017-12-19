@@ -25,10 +25,18 @@
                             <section style="width: 100%;">
                                 <boxstartseite>
                                     <smalltitle>${it.name}</smalltitle>
-                                    <p>#Questions: ${it.numberOfQuestions}</p>
-                                    <p>Highscore: ${it.highscore} / ${it.getNumberOfQuestions()}</p>
-                                    <p><g:link controller="socrative" action="startQuestionset" params="[questionblockID:it.id]" > start </g:link><p>
-                                    <p><g:link controller="socrative" action="getDetails" params="[questionblockID:it.id]" > details </g:link><p>
+                                    <boxtext>
+                                        <p>#Questions: ${it.numberOfQuestions}</p>
+                                        <p>Highscore: ${it.highscore} / ${it.getNumberOfQuestions()}</p>
+                                    </boxtext>
+                                    <p>
+                                        <g:link controller="socrative" action="startQuestionset" params="[questionblockID:it.id]" >
+                                            <smallbutton> start </smallbutton>
+                                        </g:link>
+                                        <g:link controller="socrative" action="getDetails" params="[questionblockID:it.id]" >
+                                            <smallbutton> details </smallbutton>
+                                        </g:link>
+                                    <p>
                                 </boxstartseite>
                             </section>
                     </g:each>

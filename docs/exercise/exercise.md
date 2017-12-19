@@ -24,7 +24,7 @@ External contributions:
 
 Other comments: 
 
-I'm particular proud of:
+I'm particular proud of: my box-layout and the 
 
 
 ## Project grading 

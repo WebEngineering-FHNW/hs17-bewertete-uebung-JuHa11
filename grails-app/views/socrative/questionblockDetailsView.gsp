@@ -14,10 +14,10 @@
             <li><g:link controller="socrative" action="addQuestionBlock">Add Questionblock</g:link></li>
         </ul>
     </nav>
-    <p>
-        <bigtitle>Details ${questionblocktitle}</bigtitle><br>
-    </p>
-        <g:else>
+    <div class="content">
+        <p>
+            <bigtitle>Details ${questionblocktitle}</bigtitle><br>
+        </p>
             <g:each in="${questions}">
                 <section style="width: 100%;">
                     <boxstartseite>
@@ -40,6 +40,6 @@
                     </boxstartseite>
                 </section>
             </g:each>
-        </g:else>
+        </div>
     </body>
 </html>
