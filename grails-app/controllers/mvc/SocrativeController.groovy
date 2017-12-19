@@ -29,11 +29,6 @@ class SocrativeController {
             qb = Questionblock.get(Integer.parseInt(params.get("id")))
         }
         savequestion(params, qb)
-        if(params.containsKey('save')){
-            redirect(uri: "/socrative/index")
-        } else if(params.containsKey('addmore')) {
-            render view:"addQuestionBlockView", model:[title:qb.name, id:qb.id]
-        }
     }
 
     /*
@@ -55,6 +50,11 @@ class SocrativeController {
         if(qb.hasErrors()){
             println("ERROR: ")
             qb.getErrors().allErrors.forEach{e -> println(e.toString())}
+        }
+        if(params.containsKey('save')){
+            redirect(uri: "/socrative/index")
+        } else if(params.containsKey('addmore')) {
+            render view:"addQuestionBlockView", model:[title:qb.name, id:qb.id]
         }
     }
 

@@ -10,16 +10,15 @@
         <nav>
             <ul>
                 <li><a href="/socrative/index">Overview</a></li>
-                <li><a href="#news">News</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="${createLink(uri:'/socrative/addQuestionBlock')}">Add Questionblock</a></li>
             </ul>
         </nav>
-
+        <div class="content">
         <g:form controller="socrative" action="save">
             <div>
                 <g:if test="${title != null}">
-                    <bigtitle>Add a question to:</bigtitle> ${title}<br>
-                    <input class="input" type="text" class="headertext" name="name" required><br>
+                    <bigtitle>Add a question to: ${title}</bigtitle><br>
+                    <input class="input" type="text" class="headertext" name="id" value="${id}" required hidden><br>
                 </g:if>
                 <g:else>
                     <bigtitle>Title of the questionblock: </bigtitle>
@@ -61,6 +60,7 @@
             <button type="submit" name="save">save</button>
             <button type="submit" name="addmore">add more questions</button>
         </g:form>
+        </div>
     </body>
 
 
