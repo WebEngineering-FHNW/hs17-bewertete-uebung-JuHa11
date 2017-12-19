@@ -145,19 +145,19 @@ class SocrativeController {
 
     def doStatistic(Question q, boolean answer1, boolean answer2, boolean answer3, boolean answer4) {
         if(answer1){
-            q.answer1.chosen++
+            q.answer1.incChosen()
             q.answer1.save(flush: true)
         }
         if(answer2){
-            q.answer2.chosen++
+            q.answer2.incChosen()
             q.answer2.save(flush: true)
         }
         if(answer3){
-            q.answer3.chosen++
+            q.answer3.incChosen()
             q.answer3.save(flush: true)
         }
         if(answer4){
-            q.answer4.chosen++
+            q.answer4.incChosen()
             q.answer4.save(flush: true)
         }
     }

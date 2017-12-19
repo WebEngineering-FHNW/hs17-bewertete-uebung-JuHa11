@@ -8,4 +8,8 @@ class Answer {
 
     static constraints = {
     }
+
+    void incChosen() {
+        chosen++
+    }
 }
