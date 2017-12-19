@@ -10,13 +10,16 @@ import spock.lang.Specification
 class QuestionblockSpec extends Specification {
 
     def setup() {
+        //Questionblock qb = new Questionblock(name: "Questionblock1", highscore: 0 )
     }
 
     def cleanup() {
     }
 
-    void "test something"() {
-        expect:"fix me"
-            true == false
+    void "getNumberOfQuestions"() {
+        int numberOfQuestions = qb.getNumberOfQuestions()
+        numberOfQuestions == 0
     }
+
+
 }
