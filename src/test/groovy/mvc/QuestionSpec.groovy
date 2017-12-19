@@ -31,16 +31,18 @@ class QuestionSpec extends Specification {
     }
 
     void "getStatistic"() {
-        a1.incChosen()
-        a2.incChosen()
-        a3.incChosen()
-        a2.incChosen()
-        a2.incChosen()
-        List<BigDecimal> statistic = q.getStatistic()
-        (statistic.get(0) == 20
-                && statistic.get(1) == 60
-                && statistic.get(2) == 20
-                && statistic.get(3) == 0)
+        when:
+            a1.incChosen()
+            a2.incChosen()
+            a3.incChosen()
+            a2.incChosen()
+            a2.incChosen()
+            List<BigDecimal> statistic = q.getStatistic()
+        then:
+            statistic.get(0) == 20
+            statistic.get(1) == 60
+            statistic.get(2) == 20
+            statistic.get(3) == 0
     }
 
 

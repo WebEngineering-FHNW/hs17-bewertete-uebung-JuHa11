@@ -18,19 +18,23 @@ class QuestionblockSpec extends Specification {
     }
 
     void "getNumberOfQuestions"() {
-        int numberOfQuestions = qb.getNumberOfQuestions()
-        numberOfQuestions == 0
+        when:
+            int numberOfQuestions = qb.getNumberOfQuestions()
+        then:
+            numberOfQuestions == 0
     }
 
     void "getResult"() {
-        qb.correct.add(false)
-        qb.correct.add(true)
-        qb.correct.add(true)
-        qb.correct.add(true)
-        qb.correct.add(false)
-        qb.correct.add(true)
-        int correct = qb.getResult()
-        correct == 4
+        when:
+            qb.correct.add(false)
+            qb.correct.add(true)
+            qb.correct.add(true)
+            qb.correct.add(true)
+            qb.correct.add(false)
+            qb.correct.add(true)
+            int correct = qb.getResult()
+        then:
+            correct == 4
     }
 
 
