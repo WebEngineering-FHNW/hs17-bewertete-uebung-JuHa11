@@ -3,7 +3,7 @@
         <link rel="stylesheet" type="text/css" href="${resource(file: "bootstrap.css")}" />
         <link rel="stylesheet" type="text/css" href="${resource(file: "own.css")}" />
     </head>
-    <body>
+    <body style="margin: 1%;">
     <p><bigtitle>Description of the Project: Socrative Light</bigtitle></p>
         <section>
             <boxdescription>

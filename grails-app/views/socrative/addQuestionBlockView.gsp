@@ -10,6 +10,8 @@
         <nav>
             <ul>
                 <li><a href="/socrative/index">Overview</a></li>
+                <li><a href="#news">News</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
 
@@ -17,8 +19,7 @@
             <div>
                 <g:if test="${title != null}">
                     <bigtitle>Add a question to:</bigtitle> ${title}<br>
-                    <input class="input" type="text" class="headertext" value="${title}" name="name" hidden><br>
-                    <input name="id" value="${id}" type="hidden"> <br>
+                    <input class="input" type="text" class="headertext" name="name" required><br>
                 </g:if>
                 <g:else>
                     <bigtitle>Title of the questionblock: </bigtitle>

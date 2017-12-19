@@ -13,23 +13,30 @@
             <li><a href="/socrative/index">Overview</a></li>
         </ul>
     </nav>
-
-    <bigtitle>Details ${questionblocktitle}</bigtitle><br>
+    <p>
+        <bigtitle>Details ${questionblocktitle}</bigtitle><br>
+    </p>
         <g:each in="${questions}">
-            <smalltitle>${it.question}</smalltitle><br>
-            ${it.answer1.answer}:
-            ${it.statistic[0].setScale(2, RoundingMode.HALF_UP)}%
-            <g:if test="${it.answer1.correct}">correct</g:if>
-            <br>
-            ${it.answer2.answer}:
-            ${it.statistic[1].setScale(2, RoundingMode.HALF_UP)}%
-            <br>
-            ${it.answer3.answer}:
-            ${it.statistic[2].setScale(2, RoundingMode.HALF_UP)}%
-            <br>
-            ${it.answer4.answer}:
-            ${it.statistic[3].setScale(2, RoundingMode.HALF_UP)}%
-            <br>
+            <section style="width: 100%;">
+                <boxstartseite>
+                    <p>
+                       <smalltitle>${it.question}</smalltitle><br>
+                    </p>
+                    ${it.answer1.answer}:
+                    ${it.statistic[0].setScale(2, RoundingMode.HALF_UP)}%
+                    <g:if test="${it.answer1.correct}">correct</g:if>
+                    <br>
+                    ${it.answer2.answer}:
+                    ${it.statistic[1].setScale(2, RoundingMode.HALF_UP)}%
+                    <br>
+                    ${it.answer3.answer}:
+                    ${it.statistic[2].setScale(2, RoundingMode.HALF_UP)}%
+                    <br>
+                    ${it.answer4.answer}:
+                    ${it.statistic[3].setScale(2, RoundingMode.HALF_UP)}%
+                    <br>
+                </boxstartseite>
+            </section>
         </g:each>
     </body>
 </html>
