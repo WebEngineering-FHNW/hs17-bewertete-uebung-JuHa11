@@ -31,10 +31,10 @@
                                     </boxtext>
                                     <p>
                                         <g:link controller="socrative" action="startQuestionset" params="[questionblockID:it.id]" >
-                                            <smallbutton> start </smallbutton>
+                                            <button class="smallbutton">start</button>
                                         </g:link>
                                         <g:link controller="socrative" action="getDetails" params="[questionblockID:it.id]" >
-                                            <smallbutton> details </smallbutton>
+                                            <button class="smallbutton">details</button>
                                         </g:link>
                                     <p>
                                 </boxstartseite>

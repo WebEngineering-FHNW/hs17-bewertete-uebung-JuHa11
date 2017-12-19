@@ -69,19 +69,11 @@ button:hover {
     text-decoration: underline;
 }
 
-smallbutton {
-    border: 2px solid darkblue;
-    color: whitesmoke;
-    background-color: darkblue;
-    margin-right: 20px;
-    border-radius: 4px;
+.smallbutton {
+    margin-right: 5px;
+    width: 150px;
     padding: 1.5%;
-    box-shadow: 5px 5px 3px grey;
-}
-
-smallbutton:hover {
-    opacity: 0.8;
-    text-decoration: underline;
+    height: 50px;
 }
 
 ul {
