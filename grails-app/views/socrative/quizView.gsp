@@ -17,7 +17,7 @@
         <g:if test="${previousquestion != null}">
 
             <!-- Trigger/Open The Modal -->
-            <button id="openModalButton" hidden></button>
+            <button id="openModalButton" hidden type="button"></button>
 
             <!-- The Modal -->
             <div id="myModal" class="modal">
@@ -71,6 +71,24 @@
     </body>
 
     <script type="text/javascript">
+        /*
+         * https://www.w3schools.com/jquery/jquery_ref_selectors.asp
+         */
+        $(document).ready(function () {
+            $(":submit").click(function() {
+                console.log("Called!");
+                checked = $("input[type=checkbox]:checked").length;
+                console.log("Checked: " + checked);
+                if(!checked) {
+                    alert("You must check at least one checkbox.");
+                    return false;
+                }
+            });
+
+            var button = document.getElementById('openModalButton')  ;
+            button.hidden = true;
+            button.click();
+        });
         // Get the modal
         var modal = document.getElementById('myModal');
         // Get the button that opens the modal
@@ -91,25 +109,13 @@
                 modal.style.display = "none";
             }
         };
-        window.onload = function() {
+
+        /*window.onload = function() {
             var button = document.getElementById('openModalButton')  ;
             button.hidden = true;
             button.click();
-        };
-        /*
-         * https://www.w3schools.com/jquery/jquery_ref_selectors.asp
-         */
-        $(document).ready(function () {
-            $(":submit").click(function() {
-                console.log("Called!");
-                checked = $("input[type=checkbox]:checked").length;
-                console.log("Checked: " + checked);
-                if(!checked) {
-                    alert("You must check at least one checkbox.");
-                    return false;
-                }
-            });
-        });
+        };*/
+
     </script>
 </html>
 

@@ -9,8 +9,8 @@
     <body>
         <nav>
             <ul>
-                <li><a href="/socrative/index">Overview</a></li>
-                <li><a href="${createLink(uri:'/socrative/addQuestionBlock')}">Add Questionblock</a></li>
+                <li><g:link controller="socrative" action="index">Overview</g:link></li>
+                <li><g:link controller="socrative" action="addQuestionBlock">Add Questionblock</g:link></li>
             </ul>
         </nav>
         <div class="content">
